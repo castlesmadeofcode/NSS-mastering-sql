@@ -58,16 +58,28 @@ SET     model =  CASE
 				 END ;
 
 
---3 Altering a Table (changing type to int)
+--3 renaming the columns
+
+ALTER TABLE VehicleTypes
+RENAME COLUMN make TO make_id;
+
+ALTER TABLE VehicleTypes
+RENAME COLUMN model TO model_id;
+
+ALTER TABLE VehicleTypes
+RENAME COLUMN body_type TO body_type_id;				 
+
+
+--4 Altering a Table (changing type to int)
 
 ALTER TABLE vehicletypes
 ALTER COLUMN body_type TYPE int USING body_type::int,
 ALTER COLUMN make TYPE int USING make::int,
 ALTER COLUMN model TYPE int USING model::int;
 
--- 4 Import CSV files
+-- 5 Import CSV files
 
--- 5 Altering a Table (adding foreign key constraints)
+-- 6 Altering a Table (adding foreign key constraints)
  ALTER TABLE VehicleTypes
   ADD CONSTRAINT fk_body_type 
   FOREIGN KEY (body_type) 
