@@ -29,7 +29,6 @@ WHERE
 
 
 -- Get a list of employees whose first names start with "M" or ends with "e".
-
 SELECT 
     *
 FROM
@@ -39,7 +38,6 @@ WHERE
 
 
 -- Get a list of employees whose phone numbers have the 600 area code.
-
 SELECT 
     *
 FROM
