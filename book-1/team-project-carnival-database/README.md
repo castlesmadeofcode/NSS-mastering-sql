@@ -2,7 +2,7 @@
 
 Carnival's intern Monique had extra time to really get familiar with database normalization and data relationships and found that she could improve her ERD. Below is the ERD that she thinks will improve the quality of her database. Use this ERD as the basis for the following group work. 
 
-<img src="./images/Carnival.jpeg" width=900>
+<img src="https://github.com/nashville-software-school/sql-professional/blob/master/book-1-carnival-design/chapters/images/Carnival.jpeg" width=900>
 
 ## Goals
 
