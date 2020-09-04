@@ -3,7 +3,7 @@
 
 -- Get a list of the sales that was made for each sales type.
 SELECT
-s
+s.*, st.name
 FROM
     sales AS s
 INNER JOIN salestypes AS st
@@ -36,8 +36,9 @@ INNER JOIN dealerships AS d
 
 -- Get a list of all the dealerships and the employees, if any, working at each one.
 SELECT
-  d,
-  e
+  d.business_name,
+  e.first_name,
+  e.last_name
 FROM
     dealershipemployees AS de
 INNER JOIN dealerships as d
