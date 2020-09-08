@@ -9,7 +9,6 @@ FROM
 INNER JOIN salestypes AS st
     ON s.sales_type_id = st.sales_type_id;
 
-
 -- Get a list of sales with the VIN of the vehicle, the first name and
 --  last name of the customer, first name and last name of the employee
 --   who made the sale and the name, city and state of the dealership.
@@ -33,7 +32,6 @@ INNER JOIN employees AS e
 INNER JOIN dealerships AS d
     ON s.dealership_id = d.dealership_id
 
-
 -- Get a list of all the dealerships and the employees, if any, working at each one.
 SELECT
   d.business_name,
@@ -45,7 +43,6 @@ INNER JOIN dealerships as d
     ON de.dealership_id = d.dealership_id
 INNER JOIN employees as e
     ON de.employee_id = e.employee_id
-
 
 -- Get a list of vehicles with the names of the body type, make, model and color.
 SELECT
