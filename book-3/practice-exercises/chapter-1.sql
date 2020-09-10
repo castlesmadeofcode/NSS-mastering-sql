@@ -7,7 +7,9 @@
 
 SELECT * FROM public.employees
 WHERE first_name = 'Rheta' AND last_name = 'Raymen'
-ORDER BY employee_id ASC 
+
+SELECT * FROM public.dealershipemployees
+WHERE employee_id = 680
 
 UPDATE dealershipemployees
 SET dealership_id = 20
@@ -15,12 +17,11 @@ WHERE employee_id = 680 AND dealership_id = 751;
 
 SELECT * FROM public.dealershipemployees
 WHERE employee_id = 680
-ORDER BY employee_id ASC 
 
 
 -- Practice: Sales
 
--- A Sales associate needs to update a sales record because her customer want to pay with
+-- A Sales associate nee    ds to update a sales record because her customer want to pay with
 --  Mastercard instead of American Express. Update Customer, Layla Igglesden Sales record 
 --  which has an invoice number of 2781047589.
 
