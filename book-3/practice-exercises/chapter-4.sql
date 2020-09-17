@@ -7,6 +7,11 @@
 -- that the vehicle is no longer available in the inventory. Why not delete this vehicle? 
 -- We don't want to delete it because it is attached to a sales record.
 
+ALTER TABLE vehicles
+ADD COLUMN is_sold bool NOT NULL
+SET DEFAULT false
+
+
 CREATE PROCEDURE sell_vehicle(a int)
 LANGUAGE plpgsql
 AS $$
@@ -30,6 +35,10 @@ CALL insert_data();
 -- Carnival staff are required to do an oil change on the returned car before putting it back
 -- on the sales floor. In our stored procedure, we must also log the oil change within the 
 -- OilChangeLog table.
+
+
+-- add return boolean to sales table and create oilchangelog table and other tables
+-- try to write tables on own but they exist in book-1
 
 CREATE PROCEDURE return_vehicle(a int)
 LANGUAGE plpgsql
