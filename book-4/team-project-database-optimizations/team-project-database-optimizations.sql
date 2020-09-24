@@ -1,6 +1,9 @@
+
+
 -- Times (normalized tables w/ joins)
 -- Pl: 0.355
 -- Ex: 2.343
+
 EXPLAIN ANALYZE SELECT 
 	v.msr_price, vbt.name bodytype, 
 	vma.name make, vmo.name model 
@@ -30,11 +33,14 @@ ALTER TABLE vehicles
 ADD CONSTRAINT vehicles_vehicle_type_id_fkey 
 FOREIGN KEY (vehicle_type_id) 
 REFERENCES denormvehicletypes (vehicle_type_id);
+
+
 -- Times (denormalized tables no joins)
 -- PT: 0.219 ms
 -- ET: 1.9 ms
 -- PT: 0.143 ms
 -- ET: 1.127 ms
+
 EXPLAIN ANALYZE SELECT v.msr_price,  dvt.*
 FROM vehicles v
 JOIN denormvehicletypes dvt
