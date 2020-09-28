@@ -47,3 +47,19 @@ JOIN denormvehicletypes dvt
 ON v.vehicle_type_id = dvt.vehicle_type_id
 WHERE v.msr_price > 15000
 ORDER BY msr_price;
+
+
+
+
+CREATE or REPLACE PROCEDURE insert_new_vehicle(vin integer, engine_type varchar, vehicle_type_id integer,
+                          exterior_color varchar, interior_color varchar, floor_price integer,
+                          msr_price integer, miles_count integer, year_of_car integer, is_sold boolean)
+LANGUAGE SQL
+AS $$
+    INSERT INTO vehicles(vin, engine_type, vehicle_type_id, exterior_color, interior_color,floor_price, msr_price, miles_count, year_of_car, is_sold)
+    VALUES(vin, engine_type, vehicle_type_id, exterior_color, interior_color, floor_price, msr_price, miles_count, year_of_car, is_sold);  
+    Select vin WHERE not exists(SELECT * FROM vehicles WHERE vin = vin) 
+
+$$;
+
+CALL insert_new_vehicle(2,'2',2,'2','2', 2, 2, 2 ,2, false);
